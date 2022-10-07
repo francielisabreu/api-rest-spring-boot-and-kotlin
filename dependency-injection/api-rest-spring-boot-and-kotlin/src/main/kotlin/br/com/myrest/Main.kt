@@ -1,11 +1,13 @@
 package br.com.myrest
 
+
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
+//@SpringBootApplication
 @SpringBootApplication
-class Startup
+class Main
 
 fun main(args: Array<String>) {
-	runApplication<Startup>(*args)
+	runApplication<Main>(*args)
 }

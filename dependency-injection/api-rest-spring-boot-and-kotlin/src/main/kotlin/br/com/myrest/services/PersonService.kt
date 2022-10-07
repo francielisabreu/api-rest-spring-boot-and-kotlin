@@ -38,15 +38,14 @@ class PersonService {
     }
 
 
-    fun update(person: Person) {
+    fun update(person: Person): Person {
         val entity = repository.findById(person.id)
             .orElseThrow { ResourceNotFoundException("Nenhum registro encontrado para este ID") }
-
-
         entity.firstName = person.firstName
         entity.lastName = person.lastName
         entity.adress = person.adress
         entity.gender = person.gender
+        return repository.save(entity)
     }
 
     fun delete(id: Long) {
